@@ -10,7 +10,8 @@ import { MessageService } from './message.service';
 export class HeroService {
   getHeroes(): Observable<Hero[]> {
     // TODO: send the message _after_ fetching the heroes
-    this.messageService.add('HeroService: fetched heroes');
+    // trong service gọi service khác
+    this.messageService.add(`${new Date().toLocaleString()}. Get Heroes List `);
     return of(HEROES);
   }
   constructor(private messageService: MessageService) {}
