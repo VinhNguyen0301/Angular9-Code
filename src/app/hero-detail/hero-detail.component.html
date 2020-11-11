@@ -1,0 +1,15 @@
+<div *ngIf="heroDetails">
+  <h2>{{ heroDetails.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ heroDetails.id }}</div>
+  <div>
+    <label
+      >name:
+      <input [(ngModel)]="heroDetails.name" placeholder="name" />
+    </label>
+  </div>
+</div>
+<div>
+  <p>Today's item: {{ item }}</p>
+  <label>Add an item: <input #newItem /></label>
+  <button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+</div>
