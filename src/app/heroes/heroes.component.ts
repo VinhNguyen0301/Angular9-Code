@@ -17,10 +17,7 @@ export class HeroesComponent implements OnInit {
 
   items = ['item1', 'item2', 'item3', 'item4'];
 
-  constructor(
-    private heroService: HeroService,
-    private messageService: MessageService
-  ) {}
+  constructor(private heroService: HeroService) {}
 
   getHeroes(): void {
     //this.heroes = this.heroService.getHeroes();
@@ -38,11 +35,11 @@ export class HeroesComponent implements OnInit {
     //It's a good place to put initialization logic
     this.getHeroes();
   }
-  onSelect(hero: Hero) {
-    this.selectedHero = hero;
-    console.log(hero);
-    this.messageService.add(`HeroesComponent: Selected hero name=${hero.name}`);
-  }
+  // onSelect(hero: Hero) {
+  //   this.selectedHero = hero;
+  //   console.log(hero);
+  //   this.messageService.add(`HeroesComponent: Selected hero name=${hero.name}`);
+  // }
 
   addItem(newItem: string) {
     this.items.push(newItem);
